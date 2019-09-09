@@ -1,0 +1,19 @@
+{
+    "appenders": {
+        "access": {
+            "type": "dateFile",
+            "filename": "logs/access.log",
+            "pattern": "-yyyy-MM-dd"
+        },
+        "request": {
+            "type": "dateFile",
+            "filename": "logs/request.log",
+            "pattern": "-yyyy-MM-dd",
+            "encoding": "utf-8"
+        }
+    },
+    "categories": {
+        "default": { "appenders": ["access"], "level": "info" },
+        "request": { "appenders": ["request"], "level": "error" }
+    }
+}
