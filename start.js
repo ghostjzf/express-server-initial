@@ -4,14 +4,14 @@ const path = require("path");
 const logger = require("./utils/log");
 const bodyParser = require("body-parser");
 
+app.use("/public", express.static(__dirname + "/public"));
+
 app.set("views", path.join(__dirname, "views"));
 app.engine("html", require("ejs").renderFile);
 app.set("view engine", "html");
 
 app.use(bodyParser.urlencoded({ extended: false }));
-
 app.use(bodyParser.json());
-
 app.use(function(req, res) {
     res.setHeader("Content-Type", "text/plain");
     res.write("you posted:\n");
