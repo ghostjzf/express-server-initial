@@ -1,0 +1,14 @@
+[2019-09-10T14:18:36.211] [INFO] http - {
+  "url": "/api/admin?a=7",
+  "method": "GET",
+  "query": {
+    "a": "7"
+  }
+}
+[2019-09-10T14:19:15.847] [INFO] http - {
+  "url": "/api/admin?a=7",
+  "method": "GET",
+  "query": {
+    "a": "7"
+  }
+}

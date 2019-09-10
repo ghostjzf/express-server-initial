@@ -1,10 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../utils/mysql");
-const log = require("../utils/log");
 
 router.get("/admin", (req, res) => {
-    log(req);
     db.query("SELECT * FROM user", [], function(result, fields) {
         console.log("查询结果：");
         console.log(result);

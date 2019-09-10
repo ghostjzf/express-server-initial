@@ -3,17 +3,26 @@
         "access": {
             "type": "dateFile",
             "filename": "logs/access.log",
-            "pattern": "-yyyy-MM-dd"
+            "pattern": "-yyyy-MM-dd",
+            "encoding": "utf-8"
         },
-        "request": {
+        "error": {
             "type": "dateFile",
-            "filename": "logs/request.log",
+            "filename": "logs/error.log",
+            "pattern": "-yyyy-MM-dd",
+            "encoding": "utf-8"
+        },
+        "http": {
+            "type": "dateFile",
+            "filename": "logs/http.log",
             "pattern": "-yyyy-MM-dd",
             "encoding": "utf-8"
         }
     },
     "categories": {
         "default": { "appenders": ["access"], "level": "info" },
-        "request": { "appenders": ["request"], "level": "error" }
+        "error": { "appenders": ["error"], "level": "error" },
+        "info": { "appenders": ["access"], "level": "info" },
+        "http": { "appenders": ["http"], "level": "info" }
     }
 }

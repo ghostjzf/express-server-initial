@@ -3,10 +3,32 @@ const log4Json = require("../config/log4js.json");
 
 log4js.configure(log4Json);
 
-function log(req) {
-    const logger = log4js.getLogger("request");
+const logger = {
+    error: function(error) {
+        const log = log4js.getLogger("error");
 
-    logger.error(JSON.stringify({ query: req.query }));
-}
+        log.error(JSON.stringify(error));
+    },
+    info: function(data) {
+        const log = log4js.getLogger("info");
 
-module.exports = log;
+        log.info(JOSN.stringify(data));
+    },
+    http: function(req) {
+        const log = log4js.getLogger("http");
+        const data = JSON.stringify(
+            {
+                url: req.url,
+                method: req.method,
+                query: req.query,
+                body: req.body
+            },
+            null,
+            2
+        );
+
+        log.info(data);
+    }
+};
+
+module.exports = logger;
