@@ -24,5 +24,6 @@
         "error": { "appenders": ["error"], "level": "error" },
         "info": { "appenders": ["access"], "level": "info" },
         "http": { "appenders": ["http"], "level": "info" }
-    }
+    },
+    "pm2": true
 }

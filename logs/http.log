@@ -12,3 +12,19 @@
     "a": "7"
   }
 }
+[2019-09-10T14:41:37.002] [INFO] http - {
+  "url": "/api/admin?a=7",
+  "method": "GET",
+  "query": {
+    "a": "7"
+  },
+  "body": {}
+}
+[2019-09-10T14:43:59.578] [INFO] http - {
+  "url": "/api/admin?a=7",
+  "method": "GET",
+  "query": {
+    "a": "7"
+  },
+  "body": {}
+}
