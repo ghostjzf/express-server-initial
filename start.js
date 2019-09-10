@@ -2,10 +2,21 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const logger = require("./utils/log");
+const bodyParser = require("body-parser");
 
 app.set("views", path.join(__dirname, "views"));
 app.engine("html", require("ejs").renderFile);
 app.set("view engine", "html");
+
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(bodyParser.json());
+
+app.use(function(req, res) {
+    res.setHeader("Content-Type", "text/plain");
+    res.write("you posted:\n");
+    res.end(JSON.stringify(req.body, null, 2));
+});
 
 app.use((req, res, next) => {
     logger.http(req);
